@@ -1,5 +1,6 @@
 const key = '9cddf4547a3ac49b1bdd981f1459ec09';
 const apiurl = "http://api.openweathermap.org/data/2.5/forecast?";
+
 const STORE = {
     state: [],
     route: 'start',
@@ -79,12 +80,12 @@ function renderHtml(string) {
     $('.js-results-container').html(string);
 }
 
-function toTitleCase(str)
-{
+function toTitleCase(str){
     return str.replace(/\w\S*/g, function(txt){
         return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
     });
 }
+
 
 
 function createToday() {
@@ -92,6 +93,7 @@ function createToday() {
     <h2>${toTitleCase(STORE.searchterm)}</h2>
     <div class='today-result'>
         <h2 class="today">Today</h2>
+        <img src="http://openweathermap.org/img/w/${STORE.data.list[0].weather[0].icon}.png" alt+"weather pic">
         <p>The current temperture is ${Math.floor((STORE.data.list[0].main.temp) * 9 / 5 - 459.67)} &#176F</p>
         <p>${STORE.data.list[0].weather[0].description}</p>
         <p>There is currently ${STORE.data.list[0].main.humidity}% humidity</p>
@@ -105,6 +107,7 @@ function create3Day() {
     <h2>${toTitleCase(STORE.searchterm)}</h2>
         <div class='today-result'>
             <h2 class="today">Today</h2>
+            <img src="http://openweathermap.org/img/w/${STORE.data.list[0].weather[0].icon}.png" alt+"weather pic">            
             <p>The current temperture is ${Math.floor((STORE.data.list[0].main.temp) * 9 / 5 - 459.67)} &#176F</p>
             <p>${STORE.data.list[0].weather[0].description}</p>
             <p>There is currently ${STORE.data.list[0].main.humidity}% humidity</p>
@@ -112,6 +115,7 @@ function create3Day() {
         </div>
         <div class='24hrs-future-result'>
             <h2 class="tomorrow">Tomorrow</h2>
+            <img src="http://openweathermap.org/img/w/${STORE.data.list[7].weather[0].icon}.png" alt+"weather pic">            
             <p>The current temperture is ${Math.floor((STORE.data.list[7].main.temp) * 9 / 5 - 459.67)} &#176F</p>
             <p>${STORE.data.list[7].weather[0].description}</p>
             <p>There is currently ${STORE.data.list[7].main.humidity}% humidity</p>
@@ -119,6 +123,7 @@ function create3Day() {
         </div>
         <div class='48hrs-future-result'>
             <h2>2 days from now</h2>
+            <img src="http://openweathermap.org/img/w/${STORE.data.list[15].weather[0].icon}.png" alt+"weather pic">            
             <p>The current temperture is ${Math.floor((STORE.data.list[15].main.temp) * 9 / 5 - 459.67)} &#176F</p>
             <p>${STORE.data.list[15].weather[0].description}</p>
             <p>There is currently ${STORE.data.list[15].main.humidity}% humidity</p>
@@ -132,6 +137,7 @@ function create5Day() {
     <h2>${toTitleCase(STORE.searchterm)}</h2>
         <div class='today-result'>
             <h2 class="today">Today</h2>
+            <img src="http://openweathermap.org/img/w/${STORE.data.list[0].weather[0].icon}.png" alt+"weather pic">            
             <p>The current temperture is ${Math.floor((STORE.data.list[0].main.temp) * 9 / 5 - 459.67)} &#176F</p>
             <p>${STORE.data.list[0].weather[0].description}</p>
             <p>There is currently ${STORE.data.list[0].main.humidity}% humidity</p>
@@ -139,6 +145,7 @@ function create5Day() {
         </div>
         <div class='future-result'>
             <h2 class="tomorrow">Tomorrow</h2>
+            <img src="http://openweathermap.org/img/w/${STORE.data.list[7].weather[0].icon}.png" alt+"weather pic">            
             <p>The current temperture is ${Math.floor((STORE.data.list[7].main.temp) * 9 / 5 - 459.67)} &#176F</p>
             <p>${STORE.data.list[7].weather[0].description}</p>
             <p>There is currently ${STORE.data.list[7].main.humidity}% humidity</p>
@@ -146,6 +153,7 @@ function create5Day() {
         </div>
         <div class='future-result'>
             <h2>2 in the future</h2>
+            <img src="http://openweathermap.org/img/w/${STORE.data.list[15].weather[0].icon}.png" alt+"weather pic">            
             <p>The current temperture is ${Math.floor((STORE.data.list[15].main.temp) * 9 / 5 - 459.67)} &#176F</p>
             <p>${STORE.data.list[15].weather[0].description}</p>
             <p>There is currently ${STORE.data.list[15].main.humidity}% humidity</p>
@@ -153,6 +161,7 @@ function create5Day() {
         </div>
         <div class='future-result'>
             <h2>3 in the future</h2>
+            <img src="http://openweathermap.org/img/w/${STORE.data.list[23].weather[0].icon}.png" alt+"weather pic">            
             <p>The current temperture is ${Math.floor((STORE.data.list[23].main.temp) * 9 / 5 - 459.67)} &#176F</p>
             <p>${STORE.data.list[23].weather[0].description}</p>
             <p>There is currently ${STORE.data.list[23].main.humidity}% humidity</p>
@@ -160,6 +169,7 @@ function create5Day() {
         </div>
         <div class='future-result'>
             <h2>4 days in the future</h2>
+            <img src="http://openweathermap.org/img/w/${STORE.data.list[31].weather[0].icon}.png" alt+"weather pic">            
             <p>The current temperture is ${Math.floor((STORE.data.list[31].main.temp) * 9 / 5 - 459.67)} &#176F</p>
             <p>${STORE.data.list[31].weather[0].description}</p>
             <p>There is currently ${STORE.data.list[31].main.humidity}% humidity</p>
