@@ -13,6 +13,8 @@ function handleFormSubmit(){
         const searchterm = $(".js-input").val();
         $(".js-input").val("");
         STORE.searchterm = searchterm; 
+        $(".js-start").addClass("hidden");
+        $(".js-results").removeClass("hidden"); 
         createApiRequest(searchterm);
     }); 
 }
