@@ -10,7 +10,7 @@ const STORE = {
 function handleFormSubmit(){
     $('.js-form').submit(function(event){
         event.preventDefault(); 
-        const searchterm = $(".js-input").val();
+        let searchterm = $(".js-input").val();
         $(".js-input").val("");
         STORE.searchterm = searchterm; 
         $(".js-start").addClass("hidden");
@@ -18,17 +18,29 @@ function handleFormSubmit(){
         createApiRequest(searchterm);
     }); 
 }
+function handleFormReSubmit(){
+    $('.js-re-search-button').on('click', function(event){
+        console.log("IT RAN"); 
+        event.preventDefault(); 
+        let searchterm = $(".js-re-input").val();
+        $(".js-re-input").val("");
+        STORE.searchterm = searchterm;  
+        createApiRequest(searchterm);
+    }); 
+}
 
 function createApiRequest(searchterm){
-    const search = {
+    let search = {
         q: searchterm,
         APPID: key
     };
+    console.log(search);
     $.getJSON(apiurl, search, callback);
 }
 
 function main(){
-    handleFormSubmit(); 
+    handleFormSubmit();
+    handleFormReSubmit(); 
 }
 
 function callback(data){
