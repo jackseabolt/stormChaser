@@ -106,6 +106,19 @@ body {
 
 }
 
+.result-title {
+    background-color:rgba(43, 40, 40, 0.8); 
+    border-radius: 6px; 
+    padding: 30px 100px; 
+    margin: 15px 0px; 
+    text-align: center; 
+}
+.result-title h2 {
+    color: white; 
+    font-size: 30px;
+    margin: 0px;  
+}
+
 .weather-icon {
     float: right; 
     width: 70px; 
