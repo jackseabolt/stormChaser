@@ -66,7 +66,9 @@ body {
     padding: 8px 20px; 
     border-radius: 6px; 
     font-size: 14px; 
-    background-color: #3c5172; 
+    background-color: #3c5172;
+    margin-top: 5px; 
+    margin-bottom: 5px;  
 }
 
 .button:hover {
@@ -80,6 +82,8 @@ body {
     border-radius: 6px; 
     font-size: 14px; 
     background-color:#2d2d2d; 
+    margin-top: 5px; 
+    margin-bottom: 5px; 
 }
 
 .button-results:hover {
@@ -103,7 +107,6 @@ body {
     border-radius: 6px; 
     padding: 40px 100px; 
     margin: 15px 0px; 
-
 }
 
 .result-title {
@@ -124,4 +127,17 @@ body {
     width: 70px; 
     position: relative; 
     top: -50px; 
+}
+
+@media screen and (max-width:536px){
+    .results-container {
+        width: 90%; 
+    }
+    .result {
+        padding: 30px 30px; 
+    }
+    .result-title {
+        padding: 30px 30px;  
+        width: 86%; 
+    }
 }
