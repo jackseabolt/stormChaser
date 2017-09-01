@@ -1,15 +1,16 @@
 .title { 
     font-family: 'Oswald', sans-serif;
-    font-size: 50px; 
+    font-size: 70px; 
     font-weight: 900; 
+    color: white;
 }
 
-.body {
+body {
     -webkit-background-size: cover; 
     -moz-background-size: cover; 
     -o-background-size: cover; 
     background-size: cover;
-    background: url('######') no-repeat center fixed;
+    background: url('/images/storm2.jpg') no-repeat center fixed;
 }
 
 
