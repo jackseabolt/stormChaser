@@ -1,7 +1,5 @@
 const key = '9cddf4547a3ac49b1bdd981f1459ec09';
 const apiurl = "http://api.openweathermap.org/data/2.5/forecast?";
-const googleapikey = "AIzaSyB4_qrqwC7o2TQlDv0G4u5gFS52IRx1mnI"; 
-const googleapiurl = "https://maps.googleapis.com/maps/api/place/autocomplete/json?"; 
 
 const STORE = {
     state: [],
@@ -22,6 +20,7 @@ function handleFormSubmit() {
         createApiRequest(searchterm);
     });
 }
+
 function handleFormReSubmit() {
     $('.js-re-search-button').on('click', function (event) {
         event.preventDefault();
@@ -84,7 +83,6 @@ function toTitleCase(str){
 }
 
 function createDate(rawdata){
-    // 2017-09-01 18:00:00
     let dataArr = rawdata.split(" "); 
     smallData = dataArr[0].split("-"); 
     let year = smallData[0]; 
@@ -138,8 +136,6 @@ function createDate(rawdata){
     return `${month} ${day}, ${year}`;  
 }
 
-
-
 function createToday() {
     return `
     <div class="result-title">
@@ -148,14 +144,13 @@ function createToday() {
     <div class='today-result result'>
         <h2 class="today">Today</h2>
         <img src="http://openweathermap.org/img/w/${STORE.data.list[0].weather[0].icon}.png" alt+"weather pic" class="weather-icon">
+        <p><b>${toTitleCase(STORE.data.list[0].weather[0].description)}</b> </p>
         <p><b>Temperature:</b> ${Math.floor((STORE.data.list[0].main.temp) * 9 / 5 - 459.67)} &#176F</p>
-        <p><b>${STORE.data.list[0].weather[0].description}</b> </p>
         <p><b>Humidity:</b> ${STORE.data.list[0].main.humidity}%</p>
         <p><b>Wind:</b> ${Math.floor((STORE.data.list[0].wind.speed) * 60 * 60 * 0.000621371)} mph</p>
      </div>
     `
 }
-
 
 function create3Day() {
     return `
@@ -165,28 +160,28 @@ function create3Day() {
         <div class='today-result result'>
             <h2 class="today">Today</h2>
             <img src="http://openweathermap.org/img/w/${STORE.data.list[0].weather[0].icon}.png" alt+"weather pic" class="weather-icon">            
+            <p><b>${toTitleCase(STORE.data.list[0].weather[0].description)}</b> </p>
             <p><b>Temperature:</b> ${Math.floor((STORE.data.list[0].main.temp) * 9 / 5 - 459.67)} &#176F</p>
-            <p><b>${STORE.data.list[0].weather[0].description}</b></p>
             <p><b>Humidity:</b> ${STORE.data.list[0].main.humidity}%</p>
             <p><b>Wind:</b> ${Math.floor((STORE.data.list[0].wind.speed) * 60 * 60 * 0.000621371)} mph</p>
         </div>
         <div class='24hrs-future-result result'>
             <h2 class="tomorrow">${createDate(STORE.data.list[7].dt_txt)}</h2>
             <img src="http://openweathermap.org/img/w/${STORE.data.list[7].weather[0].icon}.png" alt+"weather pic" class="weather-icon">            
+            <p><b>${toTitleCase(STORE.data.list[7].weather[0].description)}</b> </p>
             <p><b>Temperature:</b> ${Math.floor((STORE.data.list[7].main.temp) * 9 / 5 - 459.67)} &#176F</p>
-            <p><b>${STORE.data.list[7].weather[0].description}</b> </p>
             <p><b>Humidity:</b> ${STORE.data.list[7].main.humidity}%</p>
             <p><b>Wind:</b> ${Math.floor((STORE.data.list[7].wind.speed) * 60 * 60 * 0.000621371)} mph</p>
         </div>
         <div class='48hrs-future-result result'>
             <h2>${createDate(STORE.data.list[15].dt_txt)}</h2>
             <img src="http://openweathermap.org/img/w/${STORE.data.list[15].weather[0].icon}.png" alt+"weather pic" class="weather-icon">            
+            <p><b>${toTitleCase(STORE.data.list[15].weather[0].description)}</b> </p>
             <p><b>Temperature:</b> ${Math.floor((STORE.data.list[15].main.temp) * 9 / 5 - 459.67)} &#176F</p>
-            <p><b>${STORE.data.list[15].weather[0].description}</b> </p>
             <p><b>Humidity:</b> ${STORE.data.list[15].main.humidity}%</p>
             <p><b>Wind:</b> ${Math.floor((STORE.data.list[15].wind.speed) * 60 * 60 * 0.000621371)} mph</p>
-    </div>
-    `
+        </div>
+            `
 }
 
 function create5Day() {
@@ -197,75 +192,60 @@ function create5Day() {
         <div class='today-result result'>
             <h2 class="today">Today</h2>
             <img src="http://openweathermap.org/img/w/${STORE.data.list[0].weather[0].icon}.png" alt+"weather pic" class="weather-icon">            
+            <p><b>${toTitleCase(STORE.data.list[0].weather[0].description)}</b> </p>
             <p><b>Temperature:</b> ${Math.floor((STORE.data.list[0].main.temp) * 9 / 5 - 459.67)} &#176F</p>
-            <p><b>${STORE.data.list[0].weather[0].description}</b></p>
             <p><b>Humidity:</b> ${STORE.data.list[0].main.humidity}%</p>
             <p><b>Wind:</b> ${Math.floor((STORE.data.list[0].wind.speed) * 60 * 60 * 0.000621371)} mph</p>
         </div>
         <div class='future-result result'>
             <h2 class="tomorrow">${createDate(STORE.data.list[7].dt_txt)}</h2>
             <img src="http://openweathermap.org/img/w/${STORE.data.list[7].weather[0].icon}.png" alt+"weather pic" class="weather-icon">            
+            <p><b>${toTitleCase(STORE.data.list[7].weather[0].description)}</b> </p>
             <p><b>Temperature:</b> ${Math.floor((STORE.data.list[7].main.temp) * 9 / 5 - 459.67)} &#176F</p>
-            <p><b>${STORE.data.list[7].weather[0].description}</b></p>
             <p><b>Humidity:</b> ${STORE.data.list[7].main.humidity}%</p>
             <p><b>Wind:</b> ${Math.floor((STORE.data.list[7].wind.speed) * 60 * 60 * 0.000621371)} mph</p>
         </div>
         <div class='future-result result'>
             <h2>${createDate(STORE.data.list[15].dt_txt)}</h2>
             <img src="http://openweathermap.org/img/w/${STORE.data.list[15].weather[0].icon}.png" alt+"weather pic" class="weather-icon">            
+            <p><b>${toTitleCase(STORE.data.list[15].weather[0].description)}</b> </p>
             <p><b>Temperature:</b> ${Math.floor((STORE.data.list[15].main.temp) * 9 / 5 - 459.67)} &#176F</p>
-            <p><b>${STORE.data.list[15].weather[0].description}</b> </p>
             <p><b>Humidity:</b> ${STORE.data.list[15].main.humidity}% humidity</p>
             <p><b>Wind:</b> ${Math.floor((STORE.data.list[15].wind.speed) * 60 * 60 * 0.000621371)} mph</p>
         </div>
         <div class='future-result result'>
             <h2>${createDate(STORE.data.list[23].dt_txt)}</h2>
             <img src="http://openweathermap.org/img/w/${STORE.data.list[23].weather[0].icon}.png" alt+"weather pic" class="weather-icon">            
+            <p><b>${toTitleCase(STORE.data.list[23].weather[0].description)}</b> </p>
             <p><b>Temperature:</b> ${Math.floor((STORE.data.list[23].main.temp) * 9 / 5 - 459.67)} &#176F</p>
-            <p><b>${STORE.data.list[23].weather[0].description}</b> </p>
             <p><b>Humidity:</b> ${STORE.data.list[23].main.humidity}%</p>
             <p><b>Wind:</b> ${Math.floor((STORE.data.list[23].wind.speed) * 60 * 60 * 0.000621371)} mph</p>
         </div>
         <div class='future-result result'>
-            <h2>${createDate(STORE.data.list[32].dt_txt)}</h2>
+            <h2>${createDate(STORE.data.list[31].dt_txt)}</h2>
             <img src="http://openweathermap.org/img/w/${STORE.data.list[31].weather[0].icon}.png" alt+"weather pic" class="weather-icon">            
+            <p><b>${toTitleCase(STORE.data.list[31].weather[0].description)}</b> </p>
             <p><b>Temperature:</b> ${Math.floor((STORE.data.list[31].main.temp) * 9 / 5 - 459.67)} &#176F</p>
-            <p><b>${STORE.data.list[31].weather[0].description}</b></p>
             <p><b>Humidity:</b> ${STORE.data.list[31].main.humidity}%</p>
             <p><b>Wind:</b> ${Math.floor((STORE.data.list[31].wind.speed) * 60 * 60 * 0.000621371)} mph</p>
         </div>
     `
 }
-    // 60 * 60 * 0.000621371
 
-    function getGoogleApi(){
-        const result = {
-            input: "Oakland", 
-            key: googleapikey, 
-            types: "(cities)"
-        }
-        $.getJSON(googleapiurl, result, callback2);
-    }
+function callback(data) {
+    STORE.data = data;
+    createHtml();    
+}
 
-    function callback2(data){
-        // logic goes here 
-    }
-
-    function callback(data) {
-        STORE.data = data;
-        createHtml();
-    }
-
-    function main() {
-        handleFormSubmit();
-        handleFormReSubmit();
-        handleTodaySubmit();
-        handle3DaySubmit();
-        handle5DaySubmit();
-        getGoogleApi(); 
-    }
+function main() {
+    handleFormSubmit();
+    handleFormReSubmit();
+    handleTodaySubmit();
+    handle3DaySubmit();
+    handle5DaySubmit(); 
+}
 
 
 
-    $(main)
+$(main)
 

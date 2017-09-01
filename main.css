@@ -24,7 +24,6 @@ body {
     padding-bottom: 100px; 
 }
 
-
 .hidden {
     display: none; 
 }
@@ -90,7 +89,6 @@ body {
     background-color: #191919; 
 }
 
-
 .button-css-container {
     text-align: center; 
     padding: 30px; 
@@ -116,6 +114,7 @@ body {
     margin: 15px 0px; 
     text-align: center; 
 }
+
 .result-title h2 {
     color: white; 
     font-size: 30px;
@@ -133,11 +132,12 @@ body {
     .results-container {
         width: 90%; 
     }
+
     .result {
         padding: 30px 30px; 
     }
+    
     .result-title {
         padding: 30px 30px;  
-        width: 86%; 
     }
 }
