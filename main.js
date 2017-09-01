@@ -104,6 +104,7 @@ function createToday() {
     `
 }
 
+
 function create3Day() {
     return `
         <div class="result">
