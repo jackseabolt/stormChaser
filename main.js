@@ -115,19 +115,19 @@ function create3Day() {
         </div>
         <div class='24hrs-future-result'>
             <h2 class="tomorrow">Tomorrow</h2>
-            <img src="http://openweathermap.org/img/w/${STORE.data.list[7].weather[0].icon}.png" alt+"weather pic">            
-            <p>The current temperture is ${Math.floor((STORE.data.list[7].main.temp) * 9 / 5 - 459.67)} &#176F</p>
+            <img src="http://openweathermap.org/img/w/${STORE.data.list[8].weather[0].icon}.png" alt+"weather pic">            
+            <p>The current temperture is ${Math.floor((STORE.data.list[8].main.temp) * 9 / 5 - 459.67)} &#176F</p>
             <p>${STORE.data.list[7].weather[0].description}</p>
             <p>There is currently ${STORE.data.list[7].main.humidity}% humidity</p>
-            <p>The wind is currently traveling at ${Math.floor((STORE.data.list[7].wind.speed) * 60 * 60 * 0.000621371)} mph</p>
+            <p>The wind is currently traveling at ${Math.floor((STORE.data.list[8].wind.speed) * 60 * 60 * 0.000621371)} mph</p>
         </div>
         <div class='48hrs-future-result'>
             <h2>2 days from now</h2>
-            <img src="http://openweathermap.org/img/w/${STORE.data.list[15].weather[0].icon}.png" alt+"weather pic">            
-            <p>The current temperture is ${Math.floor((STORE.data.list[15].main.temp) * 9 / 5 - 459.67)} &#176F</p>
+            <img src="http://openweathermap.org/img/w/${STORE.data.list[16].weather[0].icon}.png" alt+"weather pic">            
+            <p>The current temperture is ${Math.floor((STORE.data.list[16].main.temp) * 9 / 5 - 459.67)} &#176F</p>
             <p>${STORE.data.list[15].weather[0].description}</p>
             <p>There is currently ${STORE.data.list[15].main.humidity}% humidity</p>
-            <p>The wind is currently traveling at ${Math.floor((STORE.data.list[15].wind.speed) * 60 * 60 * 0.000621371)} mph</p>
+            <p>The wind is currently traveling at ${Math.floor((STORE.data.list[16].wind.speed) * 60 * 60 * 0.000621371)} mph</p>
     </div>
     `
 }
@@ -145,35 +145,35 @@ function create5Day() {
         </div>
         <div class='future-result'>
             <h2 class="tomorrow">Tomorrow</h2>
-            <img src="http://openweathermap.org/img/w/${STORE.data.list[7].weather[0].icon}.png" alt+"weather pic">            
-            <p>The current temperture is ${Math.floor((STORE.data.list[7].main.temp) * 9 / 5 - 459.67)} &#176F</p>
+            <img src="http://openweathermap.org/img/w/${STORE.data.list[8].weather[0].icon}.png" alt+"weather pic">            
+            <p>The current temperture is ${Math.floor((STORE.data.list[8].main.temp) * 9 / 5 - 459.67)} &#176F</p>
             <p>${STORE.data.list[7].weather[0].description}</p>
             <p>There is currently ${STORE.data.list[7].main.humidity}% humidity</p>
-            <p>The wind is currently traveling at ${Math.floor((STORE.data.list[7].wind.speed) * 60 * 60 * 0.000621371)} mph</p>
+            <p>The wind is currently traveling at ${Math.floor((STORE.data.list[8].wind.speed) * 60 * 60 * 0.000621371)} mph</p>
         </div>
         <div class='future-result'>
             <h2>2 in the future</h2>
-            <img src="http://openweathermap.org/img/w/${STORE.data.list[15].weather[0].icon}.png" alt+"weather pic">            
-            <p>The current temperture is ${Math.floor((STORE.data.list[15].main.temp) * 9 / 5 - 459.67)} &#176F</p>
-            <p>${STORE.data.list[15].weather[0].description}</p>
-            <p>There is currently ${STORE.data.list[15].main.humidity}% humidity</p>
-            <p>The wind is currently traveling at ${Math.floor((STORE.data.list[15].wind.speed) * 60 * 60 * 0.000621371)} mph</p>
+            <img src="http://openweathermap.org/img/w/${STORE.data.list[16].weather[0].icon}.png" alt+"weather pic">            
+            <p>The current temperture is ${Math.floor((STORE.data.list[16].main.temp) * 9 / 5 - 459.67)} &#176F</p>
+            <p>${STORE.data.list[16].weather[0].description}</p>
+            <p>There is currently ${STORE.data.list[16].main.humidity}% humidity</p>
+            <p>The wind is currently traveling at ${Math.floor((STORE.data.list[16].wind.speed) * 60 * 60 * 0.000621371)} mph</p>
         </div>
         <div class='future-result'>
             <h2>3 in the future</h2>
-            <img src="http://openweathermap.org/img/w/${STORE.data.list[23].weather[0].icon}.png" alt+"weather pic">            
-            <p>The current temperture is ${Math.floor((STORE.data.list[23].main.temp) * 9 / 5 - 459.67)} &#176F</p>
-            <p>${STORE.data.list[23].weather[0].description}</p>
-            <p>There is currently ${STORE.data.list[23].main.humidity}% humidity</p>
-            <p>The wind is currently traveling at ${Math.floor((STORE.data.list[23].wind.speed) * 60 * 60 * 0.000621371)} mph</p>
+            <img src="http://openweathermap.org/img/w/${STORE.data.list[24].weather[0].icon}.png" alt+"weather pic">            
+            <p>The current temperture is ${Math.floor((STORE.data.list[24].main.temp) * 9 / 5 - 459.67)} &#176F</p>
+            <p>${STORE.data.list[24].weather[0].description}</p>
+            <p>There is currently ${STORE.data.list[24].main.humidity}% humidity</p>
+            <p>The wind is currently traveling at ${Math.floor((STORE.data.list[24].wind.speed) * 60 * 60 * 0.000621371)} mph</p>
         </div>
         <div class='future-result'>
             <h2>4 days in the future</h2>
-            <img src="http://openweathermap.org/img/w/${STORE.data.list[31].weather[0].icon}.png" alt+"weather pic">            
-            <p>The current temperture is ${Math.floor((STORE.data.list[31].main.temp) * 9 / 5 - 459.67)} &#176F</p>
-            <p>${STORE.data.list[31].weather[0].description}</p>
-            <p>There is currently ${STORE.data.list[31].main.humidity}% humidity</p>
-            <p>The wind is currently traveling at ${Math.floor((STORE.data.list[31].wind.speed) * 60 * 60 * 0.000621371)} mph</p>
+            <img src="http://openweathermap.org/img/w/${STORE.data.list[32].weather[0].icon}.png" alt+"weather pic">            
+            <p>The current temperture is ${Math.floor((STORE.data.list[32].main.temp) * 9 / 5 - 459.67)} &#176F</p>
+            <p>${STORE.data.list[32].weather[0].description}</p>
+            <p>There is currently ${STORE.data.list[32].main.humidity}% humidity</p>
+            <p>The wind is currently traveling at ${Math.floor((STORE.data.list[32].wind.speed) * 60 * 60 * 0.000621371)} mph</p>
         </div>
     `
 }
