@@ -86,6 +86,62 @@ function toTitleCase(str){
     });
 }
 
+function createDate(rawdata){
+    // 2017-09-01 18:00:00
+    let dataArr = rawdata.split(" "); 
+    smallData = dataArr[0].split("-"); 
+    let year = smallData[0]; 
+    let month = smallData[1]; 
+    switch(month){
+        case 01:
+            month = "January";
+            break;
+        case 02:
+            month = "February";
+            break;
+        case 03:
+            month = "March";
+            break;
+        case 04:
+            month = "April";
+            break;
+        case 05:
+            month = "May";
+            break;
+        case 06:
+            month = "June";
+            break;
+        case 07:
+            month = "July";
+            break;
+        case 08:
+            month = "August";
+            break;
+        case "09":
+            month = "September";
+            break;
+        case 10:
+            month = "October";
+            break;
+        case 11:
+            month = "November";
+            break;
+        case 12:
+            month = "December";
+            break;
+        default: 
+            break;       
+    }; 
+    let day = smallData[2]; 
+    console.log(day.charAt(0)); 
+    if (day.charAt(0)==="0"){
+        day = day.charAt(1); 
+    } else {
+        day = day;
+    }
+    return `${month} ${day}, ${year}`;  
+}
+
 
 
 function createToday() {
@@ -119,7 +175,7 @@ function create3Day() {
             <p><b>Wind:</b> ${Math.floor((STORE.data.list[0].wind.speed) * 60 * 60 * 0.000621371)} mph</p>
         </div>
         <div class='24hrs-future-result result'>
-            <h2 class="tomorrow">Tomorrow</h2>
+            <h2 class="tomorrow">${createDate(STORE.data.list[8].dt_txt)}</h2>
             <img src="http://openweathermap.org/img/w/${STORE.data.list[8].weather[0].icon}.png" alt+"weather pic" class="weather-icon">            
             <p><b>Temperature:</b> ${Math.floor((STORE.data.list[8].main.temp) * 9 / 5 - 459.67)} &#176F</p>
             <p><b>${STORE.data.list[7].weather[0].description}</b> </p>
@@ -127,11 +183,11 @@ function create3Day() {
             <p><b>Wind:</b> ${Math.floor((STORE.data.list[8].wind.speed) * 60 * 60 * 0.000621371)} mph</p>
         </div>
         <div class='48hrs-future-result result'>
-            <h2>2 days from now</h2>
+            <h2>${createDate(STORE.data.list[16].dt_txt)}</h2>
             <img src="http://openweathermap.org/img/w/${STORE.data.list[16].weather[0].icon}.png" alt+"weather pic" class="weather-icon">            
             <p><b>Temperature:</b> ${Math.floor((STORE.data.list[16].main.temp) * 9 / 5 - 459.67)} &#176F</p>
-            <p><b>${STORE.data.list[15].weather[0].description}</b> </p>
-            <p><b>Humidity:</b> ${STORE.data.list[15].main.humidity}%</p>
+            <p><b>${STORE.data.list[16].weather[0].description}</b> </p>
+            <p><b>Humidity:</b> ${STORE.data.list[16].main.humidity}%</p>
             <p><b>Wind:</b> ${Math.floor((STORE.data.list[16].wind.speed) * 60 * 60 * 0.000621371)} mph</p>
     </div>
     `
@@ -151,7 +207,7 @@ function create5Day() {
             <p><b>Wind:</b> ${Math.floor((STORE.data.list[0].wind.speed) * 60 * 60 * 0.000621371)} mph</p>
         </div>
         <div class='future-result result'>
-            <h2 class="tomorrow">Tomorrow</h2>
+            <h2 class="tomorrow">${createDate(STORE.data.list[8].dt_txt)}</h2>
             <img src="http://openweathermap.org/img/w/${STORE.data.list[8].weather[0].icon}.png" alt+"weather pic" class="weather-icon">            
             <p><b>Temperature:</b> ${Math.floor((STORE.data.list[8].main.temp) * 9 / 5 - 459.67)} &#176F</p>
             <p><b>${STORE.data.list[7].weather[0].description}</b></p>
@@ -159,7 +215,7 @@ function create5Day() {
             <p><b>Wind:</b> ${Math.floor((STORE.data.list[8].wind.speed) * 60 * 60 * 0.000621371)} mph</p>
         </div>
         <div class='future-result result'>
-            <h2>2 in the future</h2>
+            <h2>${createDate(STORE.data.list[16].dt_txt)}</h2>
             <img src="http://openweathermap.org/img/w/${STORE.data.list[16].weather[0].icon}.png" alt+"weather pic" class="weather-icon">            
             <p><b>Temperature:</b> ${Math.floor((STORE.data.list[16].main.temp) * 9 / 5 - 459.67)} &#176F</p>
             <p><b>${STORE.data.list[16].weather[0].description}</b> </p>
@@ -167,7 +223,7 @@ function create5Day() {
             <p><b>Wind:</b> ${Math.floor((STORE.data.list[16].wind.speed) * 60 * 60 * 0.000621371)}</p>
         </div>
         <div class='future-result result'>
-            <h2>3 in the future</h2>
+            <h2>${createDate(STORE.data.list[24].dt_txt)}</h2>
             <img src="http://openweathermap.org/img/w/${STORE.data.list[24].weather[0].icon}.png" alt+"weather pic" class="weather-icon">            
             <p><b>Temperature:</b> ${Math.floor((STORE.data.list[24].main.temp) * 9 / 5 - 459.67)} &#176F</p>
             <p><b>${STORE.data.list[24].weather[0].description}</b> </p>
@@ -175,7 +231,7 @@ function create5Day() {
             <p><b>Wind:</b> ${Math.floor((STORE.data.list[24].wind.speed) * 60 * 60 * 0.000621371)}</p>
         </div>
         <div class='future-result result'>
-            <h2>4 days in the future</h2>
+            <h2>${createDate(STORE.data.list[32].dt_txt)}</h2>
             <img src="http://openweathermap.org/img/w/${STORE.data.list[32].weather[0].icon}.png" alt+"weather pic" class="weather-icon">            
             <p><b>Temperature:</b> ${Math.floor((STORE.data.list[32].main.temp) * 9 / 5 - 459.67)} &#176F</p>
             <p><b>${STORE.data.list[32].weather[0].description}</b></p>
