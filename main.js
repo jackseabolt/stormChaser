@@ -24,7 +24,6 @@ function handleFormSubmit() {
 }
 function handleFormReSubmit() {
     $('.js-re-search-button').on('click', function (event) {
-        console.log("IT RAN");
         event.preventDefault();
         let searchterm = $(".js-re-input").val();
         $(".js-re-input").val("");
@@ -43,7 +42,6 @@ function handleTodaySubmit() {
 function handle3DaySubmit() {
     $('.js-3day-button').on('click', function (event) {
         STORE.currentsetting = '3Day';
-        console.log(STORE.currentsetting);
         createHtml();
     });
 }
@@ -51,7 +49,6 @@ function handle3DaySubmit() {
 function handle5DaySubmit() {
     $('.js-5day-button').on('click', function (event) {
         STORE.currentsetting = '5Day';
-        console.log(STORE.currentsetting);
         createHtml();
     });
 }
@@ -61,7 +58,6 @@ function createApiRequest(searchterm) {
         q: searchterm,
         APPID: key
     };
-    console.log(search);
     $.getJSON(apiurl, search, callback);
 }
 
@@ -73,12 +69,11 @@ function createHtml() {
         string = create3Day();
     } else if (STORE.currentsetting === '5Day') {
         string = create5Day();
-    } else { console.log('big targeting problem') }
+    } else { console.log('There was an error') }
     renderHtml(string);
 }
 
 function renderHtml(string) {
-    console.log(string);
     $('.js-results-container').html(string);
 }
 
@@ -135,7 +130,6 @@ function createDate(rawdata){
             break;       
     }; 
     let day = smallData[2]; 
-    console.log(day.charAt(0)); 
     if (day.charAt(0)==="0"){
         day = day.charAt(1); 
     } else {
