@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>stormChaser</title>
-    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald|Roboto+Condensed" rel="stylesheet">
     <link rel="stylesheet" href="main.css">
 </head>
 
@@ -12,19 +12,22 @@
     <main role="main">
         <section class="js-start">
             <form class="js-form form-homepage">
-                <h1 class="title">storm<span class="light">Chaser</span></h1>
+                <h1 class="title">stormChaser</h1>
                 <input type="text" class="js-input input-homepage" placeholder="Search">
                 <button class="js-search-button button">Search</button>
             </form>
         </section>
         <section class="js-results hidden">
-            <form class="js-re-form">
-                <input type="text" class="js-re-input" placeholder="Search">
+            <form class="js-re-form form-results">
+                <input type="text" class="js-re-input input-results" placeholder="Search">
                 <button class="js-re-search-button button">Search</button>
             </form>
-            <button class="js-daily-button">Today's Forcast</button><button class="js-3day-button">3 Day Forcast</button>
-            <button class="js-5day-button">5 Day Forcast</button>
-            <div class="js-results-container">        
+            <div class="button-css-container">
+                <button class="js-daily-button button-results">Today</button>
+                <button class="js-3day-button button-results">3 Day</button>
+                <button class="js-5day-button button-results">5 Day</button>
+            </div>
+            <div class="js-results-container results-container">        
             </div>
         </section>
     </main>
