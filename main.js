@@ -1,5 +1,7 @@
 const key = '9cddf4547a3ac49b1bdd981f1459ec09';
 const apiurl = "http://api.openweathermap.org/data/2.5/forecast?";
+const googleapikey = "AIzaSyB4_qrqwC7o2TQlDv0G4u5gFS52IRx1mnI"; 
+const googleapiurl = "https://maps.googleapis.com/maps/api/place/autocomplete/json?"; 
 
 const STORE = {
     state: [],
@@ -242,9 +244,21 @@ function create5Day() {
 }
     // 60 * 60 * 0.000621371
 
+    function getGoogleApi(){
+        const result = {
+            input: "Oakland", 
+            key: googleapikey, 
+            types: "(cities)"
+        }
+        $.getJSON(googleapiurl, result, callback2);
+    }
+
+    function callback2(data){
+        // logic goes here 
+    }
+
     function callback(data) {
         STORE.data = data;
-        console.log(data);
         createHtml();
     }
 
@@ -254,6 +268,7 @@ function create5Day() {
         handleTodaySubmit();
         handle3DaySubmit();
         handle5DaySubmit();
+        getGoogleApi(); 
     }
 
 
