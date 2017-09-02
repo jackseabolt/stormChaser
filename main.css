@@ -1,10 +1,4 @@
-.title { 
-    font-family: 'Oswald', sans-serif;
-    font-size: 70px; 
-    font-weight: 900; 
-    color: white;
-    margin-bottom: 20px; 
-}
+/* -----------------TAG STYLES---------------- */
 
 p, h2 {
     font-family: 'Roboto Condensed', sans-serif;
@@ -24,40 +18,7 @@ body {
     padding-bottom: 100px; 
 }
 
-.hidden {
-    display: none; 
-}
-
-.sun-icon {
-    color: yellow; 
-    float: right; 
-}
-
-.form-homepage {
-    text-align: center; 
-    margin-top: 180px; 
-}
-
-.form-results {
-    margin-top: 60px; 
-    text-align: center; 
-}
-
-.input-homepage {
-    width: 30%; 
-    padding: 7px 12px; 
-    border: 1px solid gray; 
-    border-radius: 6px; 
-    font-size: 14px; 
-}
-
-.input-results {
-    width: 30%; 
-    padding: 7px 12px; 
-    border: 1px solid gray; 
-    border-radius: 6px; 
-    font-size: 14px; 
-}
+/* -----------------CLASS STYLES---------------- */
 
 .button {
     color: white; 
@@ -94,10 +55,34 @@ body {
     padding: 30px; 
 }
 
-.results-container {
-    width: 500px; 
-    margin-left: auto; 
-    margin-right: auto; 
+.form-homepage {
+    text-align: center; 
+    margin-top: 180px; 
+}
+
+.form-results {
+    margin-top: 60px; 
+    text-align: center; 
+}
+
+.hidden {
+    display: none; 
+}
+
+.input-homepage {
+    width: 30%; 
+    padding: 7px 12px; 
+    border: 1px solid gray; 
+    border-radius: 6px; 
+    font-size: 14px; 
+}
+
+.input-results {
+    width: 30%; 
+    padding: 7px 12px; 
+    border: 1px solid gray; 
+    border-radius: 6px; 
+    font-size: 14px; 
 }
 
 .result {
@@ -105,6 +90,12 @@ body {
     border-radius: 6px; 
     padding: 40px 100px; 
     margin: 15px 0px; 
+}
+
+.results-container {
+    width: 500px; 
+    margin-left: auto; 
+    margin-right: auto; 
 }
 
 .result-title {
@@ -121,12 +112,22 @@ body {
     margin: 0px;  
 }
 
+.title { 
+    font-family: 'Oswald', sans-serif;
+    font-size: 70px; 
+    font-weight: 900; 
+    color: white;
+    margin-bottom: 20px; 
+}
+
 .weather-icon {
     float: right; 
     width: 70px; 
     position: relative; 
     top: -50px; 
 }
+
+/* -----------------MOBILE STYLES---------------- */
 
 @media screen and (max-width:536px){
     .results-container {
