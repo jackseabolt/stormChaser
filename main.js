@@ -139,7 +139,7 @@ function createDate(rawdata){
 function createToday() {
     return `
     <div class="result-title">
-        <h2>${toTitleCase(STORE.searchterm)}</h2>
+        <h2>${toTitleCase(STORE.data.city.name)}, ${STORE.data.city.country}</h2>
     </div>
     <div class='today-result result'>
         <h2 class="today">Today</h2>
@@ -155,7 +155,7 @@ function createToday() {
 function create3Day() {
     return `
         <div class="result-title">
-            <h2>${toTitleCase(STORE.searchterm)}</h2>
+            <h2>${toTitleCase(STORE.data.city.name)}, ${STORE.data.city.country}</h2>
         </div>
         <div class='today-result result'>
             <h2 class="today">Today</h2>
@@ -187,7 +187,7 @@ function create3Day() {
 function create5Day() {
     return `
         <div class="result-title">
-            <h2>${toTitleCase(STORE.searchterm)}</h2>
+            <h2>${toTitleCase(STORE.data.city.name)}, ${STORE.data.city.country}</h2>
         </div>
         <div class='today-result result'>
             <h2 class="today">Today</h2>
