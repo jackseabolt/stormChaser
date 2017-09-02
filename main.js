@@ -1,12 +1,12 @@
-const key = '9cddf4547a3ac49b1bdd981f1459ec09';
-const apiurl = "https://api.openweathermap.org/data/2.5/forecast?";
-
 const STORE = {
     state: [],
     route: 'start',
     searchterm: null,
     data: null,
-    currentsetting: 'today'
+    currentsetting: 'today', 
+    apiurl: "https://api.openweathermap.org/data/2.5/forecast?",
+    key: '9cddf4547a3ac49b1bdd981f1459ec09'
+
 };
 
 function handleFormSubmit() {
@@ -55,9 +55,9 @@ function handle5DaySubmit() {
 function createApiRequest(searchterm) {
     let search = {
         q: searchterm,
-        APPID: key
+        APPID: STORE.key
     };
-    $.getJSON(apiurl, search, callback);
+    $.getJSON(STORE.apiurl, search, callback);
 }
 
 function createHtml() {
