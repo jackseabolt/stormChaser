@@ -130,6 +130,7 @@ body {
 /* -----------------MOBILE STYLES---------------- */
 
 @media screen and (max-width:536px){
+    
     .results-container {
         width: 90%; 
     }
@@ -153,4 +154,26 @@ body {
     .title { 
         font-size: 55px;
     }
+}
+
+@media screen and (max-width:400px){
+
+    body {
+        -webkit-background-size: cover; 
+        -moz-background-size: cover; 
+        -o-background-size: cover; 
+        background-size: cover;
+        background: url('storm2.jpg') no-repeat center fixed;
+        padding-bottom: 100px; 
+    }
+
+    .form-homepage { 
+        margin-top: 140px; 
+        margin-bottom: 140px; 
+    }
+
+    .title { 
+        font-size: 45px;
+    }
+
 }
