@@ -168,6 +168,10 @@ body {
         overflow: visible;  
     }
 
+    .button-results { 
+        padding: 8px 10px; 
+    }
+
     .form-homepage { 
         margin-top: 140px; 
         margin-bottom: 140px; 
