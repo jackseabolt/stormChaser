@@ -238,6 +238,7 @@ function callback(data) {
 }
 
 function main() {
+    $('body').animate({ opacity: 1 }, 1000);
     handleFormSubmit();
     handleFormReSubmit();
     handleTodaySubmit();
